@@ -1,5 +1,5 @@
-public class itemNotFoundException extends Throwable {
-    public itemNotFoundException(String itemName) {
+public class ItemNotFoundException extends Throwable {
+    public ItemNotFoundException(String itemName) {
         super(itemName);
     }
 }
