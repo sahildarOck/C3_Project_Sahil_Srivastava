@@ -58,6 +58,24 @@ class RestaurantTest {
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+    @Test
+    public void adding_no_item_to_order_should_return_order_total_as_0() {
+        Restaurant restaurant = getRestaurant();
+
+        assertEquals(restaurant.getOrderTotal(), 0);
+    }
+
+    @Test
+    public void adding_items_to_order_should_return_correct_order_total() {
+        Restaurant restaurant = getRestaurant();
+
+        assertEquals(restaurant.getOrderTotal("Sweet corn soup", "Vegetable lasagne"), 119 + 269);
+    }
+
+    //<<<<<<<<<<<<<<<<<<<<<<<ORDER>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
     private Restaurant getRestaurant() {
         LocalTime openingTime = LocalTime.parse("10:30:00");
         LocalTime closingTime = LocalTime.parse("22:00:00");
